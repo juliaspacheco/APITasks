@@ -6,10 +6,11 @@ async function storeTask(request, response) {
         request.body.title,
         request.body.description
     );
-
+    console.log(request.body)
     const query = "INSERT INTO tasks(title, description) VALUES(?,?)";
 
     connection.query(query, params, (err, results) => {
+        console.log(err, results)
         if(results) {
             response
                 .status(201)

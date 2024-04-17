@@ -1,6 +1,7 @@
 let button = document.getElementById("handleSubmit");
 
-button.onclick = async function () {
+button.onclick = async function (event) {
+    event.preventDefault();
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
     let data = {title, description}
